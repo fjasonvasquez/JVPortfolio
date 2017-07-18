@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170627080300) do
     t.integer "status", default: 0
     t.bigint "topic_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
-    t.index ["topic_id"], name: "index_blogs_on_topic_id"
+    t.index ["topic_id"], name: "index_blogs_on_topic_id", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20170627080300) do
     t.datetime "created_at"
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
   create_table "portfolios", force: :cascade do |t|
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20170627080300) do
     t.bigint "portfolio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id"
+    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id", using: :btree
   end
 
   create_table "topics", force: :cascade do |t|
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20170627080300) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "blogs", "topics"

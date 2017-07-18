@@ -5,7 +5,7 @@ module DefaultPageContent
 		before_action :set_page_defaults
 	end
 
-  def set_title
+  def set_page_defaults
   	@page_title = "Jason Portfolio | My Portfolio Website"
   	@seo_keywords = "Jason Vasquez Portfolio"
   end
