@@ -31,7 +31,6 @@ class PortfoliosController < ApplicationController
 	end
 
 	def update
-
 		respond_to do |format|
 			if @portfolio_item.update(portfolio_params)
 				format.html { redirect_to portfolios_path notice: 'The record was successfully updated.' }
@@ -45,7 +44,6 @@ class PortfoliosController < ApplicationController
 	end
 
 	def destroy
-
 		@portfolio_item.destroy
 		respond_to do |format|
 			format.html { redirect_to portfolio_item_url, notice: 'Portfolio was removed.' }
