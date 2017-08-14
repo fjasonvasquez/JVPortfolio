@@ -59,3 +59,4 @@ gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 
 gem 'JV_view_tool', git: 'https://github.com/fjasonvasquez/JV_view_tool'
 gem 'petergate', '~> 1.7', '>= 1.7.5'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
